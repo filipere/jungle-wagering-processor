@@ -1,15 +1,13 @@
-version: '3.8'
-
 services:
-  postgres:
+  wagering_db:
     image: postgres:15-alpine
-    container_name: wagering_postgres
+    container_name: wagering_db
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=wagering_db
+      POSTGRES_DB: wagering_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin123
     ports:
-      - "5432:5432"
+      - "5434:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
 
